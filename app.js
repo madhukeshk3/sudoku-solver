@@ -80,11 +80,11 @@ app.post('/submit', async (req,res) => {
       var set1=new Set();
       for(var j=0;j<9;j++){
         if(board[j][i]!=0){
-          if(set1.has(board[i][j])){
+          if(set1.has(board[j][i])){
             return false;
           }
           else{
-            set1.add(board[i][j]);
+            set1.add(board[j][i]);
           }
         }
       }
@@ -102,8 +102,8 @@ app.post('/submit', async (req,res) => {
 
       var set1=new Set();
 
-      for(var i=0;i<8;i++){
-        for(var j=0;j<8;j++){
+      for(var i=0;i<3;i++){
+        for(var j=0;j<3;j++){
           if(board[var1+i][var2+j]!=0){
             if(set1.has(board[var1+i][var2+j])){
               return false;
